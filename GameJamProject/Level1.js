@@ -12,12 +12,9 @@ var GameJam;
             _super.apply(this, arguments);
         }
         Level1.prototype.create = function () {
-            this.background = this.add.sprite(0, 0, 'level1');
-            // TODO: Add Player
-            //this.player = new Ninja(this.game, 130, 284);
+            this.player = new GameJam.Player(this.game, 60, 200);
         };
         return Level1;
     })(Phaser.State);
     GameJam.Level1 = Level1;
 })(GameJam || (GameJam = {}));
-//# sourceMappingURL=Level1.js.map

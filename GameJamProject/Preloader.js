@@ -12,12 +12,10 @@ var GameJam;
             _super.apply(this, arguments);
         }
         Preloader.prototype.preload = function () {
-            //  Set-up our preloader sprite
-            this.preloadBar = this.add.sprite(200, 250, 'preloadBar');
+            this.preloadBar = this.add.sprite(50, 125, 'preloadBar');
             this.load.setPreloadSprite(this.preloadBar);
-            //  Load our actual games assets
             this.load.image('logo', 'assets/logo.png');
-            this.load.image('level1', 'assets/level1.png');
+            this.load.atlasJSONHash('rockman', 'sample.png', 'sample.json');
         };
         Preloader.prototype.create = function () {
             var tween = this.add.tween(this.preloadBar).to({ alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
@@ -30,4 +28,3 @@ var GameJam;
     })(Phaser.State);
     GameJam.Preloader = Preloader;
 })(GameJam || (GameJam = {}));
-//# sourceMappingURL=Preloader.js.map

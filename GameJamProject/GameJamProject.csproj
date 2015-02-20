@@ -24,20 +24,6 @@
     <Content Include="app.css" />
     <Content Include="assets\loader.png" />
     <Content Include="assets\logo.png" />
-    <Content Include="assets\ninja\fall\0001.png" />
-    <Content Include="assets\ninja\jump\0001.png" />
-    <Content Include="assets\ninja\stand\0001.png" />
-    <Content Include="assets\ninja\stand\0002.png" />
-    <Content Include="assets\ninja\stun\0001.png" />
-    <Content Include="assets\ninja\stun\0002.png" />
-    <Content Include="assets\ninja\stun\0003.png" />
-    <Content Include="assets\ninja\stun\0004.png" />
-    <Content Include="assets\ninja\throw\0001.png" />
-    <Content Include="assets\ninja\throw\0002.png" />
-    <Content Include="assets\ninja\walk\0001.png" />
-    <Content Include="assets\ninja\walk\0002.png" />
-    <Content Include="assets\ninja\walk\0003.png" />
-    <Content Include="assets\rockman\level\level1.png" />
     <Content Include="assets\rockman\player\walk\0001.png" />
     <Content Include="assets\rockman\player\walk\0002.png" />
     <Content Include="assets\rockman\player\walk\0003.png" />
@@ -58,8 +44,9 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\ninja\stand\Thumbs.db" />
     <Content Include="sample.json" />
+    <None Include="teamb-gamejam - FTP.pubxml" />
+    <None Include="teamb-gamejam - Web Deploy.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -77,9 +64,11 @@
     <TypeScriptCompile Include="pixi.d.ts" />
     <TypeScriptCompile Include="Player.ts" />
     <TypeScriptCompile Include="Preloader.ts" />
+    <Content Include="*.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\level\" />
+    <Folder Include="assets\rockman\level\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

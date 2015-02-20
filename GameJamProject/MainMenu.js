@@ -12,10 +12,9 @@ var GameJam;
             _super.apply(this, arguments);
         }
         MainMenu.prototype.create = function () {
-            // TODO: Turn into real menu, instead of just a click through.
             this.logo = this.add.sprite(this.world.centerX, -300, 'logo');
             this.logo.anchor.setTo(0.5, 0.5);
-            this.add.tween(this.logo).to({ y: 220 }, 2000, Phaser.Easing.Elastic.Out, true, 2000);
+            this.add.tween(this.logo).to({ y: 125 }, 2000, Phaser.Easing.Elastic.Out, true, 2000);
             this.input.onDown.addOnce(this.fadeOut, this);
         };
         MainMenu.prototype.fadeOut = function () {
@@ -29,4 +28,3 @@ var GameJam;
     })(Phaser.State);
     GameJam.MainMenu = MainMenu;
 })(GameJam || (GameJam = {}));
-//# sourceMappingURL=MainMenu.js.map
