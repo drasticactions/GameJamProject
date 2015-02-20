@@ -61,6 +61,7 @@
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
 
                 this.body.velocity.x = -150;
+                // If we're jumping, don't fire the walk animation.
                 if (!this.isJumping)
                 this.animations.play('walk');
 
@@ -83,12 +84,16 @@
                 this.animations.play('idle');
             }
 
+            // If we're on the ground, let the player jump.
+            // TODO: Move to "OnDown" event, rather than check on update.
+
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP) && this.body.blocked.down) {
                 this.isJumping = true;
                 this.body.velocity.y = -150;
                 this.animations.play('jump');
             }
             else if (!this.body.blocked.down) {
+                // Still in the air, so still jumping.
                 this.isJumping = true;
             } else {
                 this.isJumping = false;
