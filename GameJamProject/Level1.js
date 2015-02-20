@@ -12,7 +12,7 @@ var GameJam;
             _super.apply(this, arguments);
         }
         Level1.prototype.create = function () {
-            this.player = new GameJam.Player(this.game, 60, 200);
+            this.player = new GameJam.Player(this.game, 60, this.game.world.height - 150);
         };
         return Level1;
     })(Phaser.State);

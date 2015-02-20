@@ -35,34 +35,30 @@ var GameJam;
 })(GameJam || (GameJam = {}));
 var GameJam;
 (function (GameJam) {
-    var Game = (function (_super) {
-        __extends(Game, _super);
-        function Game() {
-            _super.call(this, 500, 300, Phaser.AUTO, 'content', null);
-            this.state.add('Boot', GameJam.Boot, false);
-            this.state.add('Preloader', GameJam.Preloader, false);
-            this.state.add('MainMenu', GameJam.MainMenu, false);
-            this.state.add('Level1', GameJam.Level1, false);
-            this.state.start('Boot');
-        }
-        return Game;
-    })(Phaser.Game);
-    GameJam.Game = Game;
-})(GameJam || (GameJam = {}));
-var GameJam;
-(function (GameJam) {
-    var Level1 = (function (_super) {
-        __extends(Level1, _super);
-        function Level1() {
+    var Preloader = (function (_super) {
+        __extends(Preloader, _super);
+        function Preloader() {
             _super.apply(this, arguments);
         }
-        Level1.prototype.create = function () {
-            // TODO: Add Player
-            this.player = new GameJam.Player(this.game, 60, this.game.world.height - 150);
+        Preloader.prototype.preload = function () {
+            //  Set-up our preloader sprite
+            this.preloadBar = this.add.sprite(50, 125, 'preloadBar');
+            this.load.setPreloadSprite(this.preloadBar);
+            //  Load our actual games assets
+            this.load.image('logo', 'assets/logo.png');
+            // Load JSON Sprite Atlas
+            this.load.atlasJSONHash('rockman', 'sample.png', 'sample.json');
         };
-        return Level1;
+        Preloader.prototype.create = function () {
+            var tween = this.add.tween(this.preloadBar).to({ alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
+            tween.onComplete.add(this.startMainMenu, this);
+        };
+        Preloader.prototype.startMainMenu = function () {
+            this.game.state.start('MainMenu', true, false);
+        };
+        return Preloader;
     })(Phaser.State);
-    GameJam.Level1 = Level1;
+    GameJam.Preloader = Preloader;
 })(GameJam || (GameJam = {}));
 var GameJam;
 (function (GameJam) {
@@ -88,6 +84,37 @@ var GameJam;
         return MainMenu;
     })(Phaser.State);
     GameJam.MainMenu = MainMenu;
+})(GameJam || (GameJam = {}));
+var GameJam;
+(function (GameJam) {
+    var Level1 = (function (_super) {
+        __extends(Level1, _super);
+        function Level1() {
+            _super.apply(this, arguments);
+        }
+        Level1.prototype.create = function () {
+            // TODO: Add Player
+            this.player = new GameJam.Player(this.game, 60, this.game.world.height - 150);
+        };
+        return Level1;
+    })(Phaser.State);
+    GameJam.Level1 = Level1;
+})(GameJam || (GameJam = {}));
+var GameJam;
+(function (GameJam) {
+    var Game = (function (_super) {
+        __extends(Game, _super);
+        function Game() {
+            _super.call(this, 500, 300, Phaser.AUTO, 'content', null);
+            this.state.add('Boot', GameJam.Boot, false);
+            this.state.add('Preloader', GameJam.Preloader, false);
+            this.state.add('MainMenu', GameJam.MainMenu, false);
+            this.state.add('Level1', GameJam.Level1, false);
+            this.state.start('Boot');
+        }
+        return Game;
+    })(Phaser.Game);
+    GameJam.Game = Game;
 })(GameJam || (GameJam = {}));
 var GameJam;
 (function (GameJam) {
@@ -172,32 +199,5 @@ var GameJam;
         return Player;
     })(Phaser.Sprite);
     GameJam.Player = Player;
-})(GameJam || (GameJam = {}));
-var GameJam;
-(function (GameJam) {
-    var Preloader = (function (_super) {
-        __extends(Preloader, _super);
-        function Preloader() {
-            _super.apply(this, arguments);
-        }
-        Preloader.prototype.preload = function () {
-            //  Set-up our preloader sprite
-            this.preloadBar = this.add.sprite(50, 125, 'preloadBar');
-            this.load.setPreloadSprite(this.preloadBar);
-            //  Load our actual games assets
-            this.load.image('logo', 'assets/logo.png');
-            // Load JSON Sprite Atlas
-            this.load.atlasJSONHash('rockman', 'sample.png', 'sample.json');
-        };
-        Preloader.prototype.create = function () {
-            var tween = this.add.tween(this.preloadBar).to({ alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
-            tween.onComplete.add(this.startMainMenu, this);
-        };
-        Preloader.prototype.startMainMenu = function () {
-            this.game.state.start('MainMenu', true, false);
-        };
-        return Preloader;
-    })(Phaser.State);
-    GameJam.Preloader = Preloader;
 })(GameJam || (GameJam = {}));
 //# sourceMappingURL=game.js.map

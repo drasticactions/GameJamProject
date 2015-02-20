@@ -36,6 +36,7 @@
     <Content Include="assets\rockman\player\walk\0010.png" />
     <Content Include="assets\rockman\player\walk\0011.png" />
     <Content Include="assets\rockman\player\walk\0012.png" />
+    <Content Include="Game.js" />
     <Content Include="index.html" />
     <Content Include="phaser.js" />
     <Content Include="phaser.map" />
@@ -45,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="sample.json" />
+    <Content Include="game.js.map" />
     <None Include="teamb-gamejam - FTP.pubxml" />
     <None Include="teamb-gamejam - Web Deploy.pubxml" />
     <None Include="web.Debug.config">
@@ -64,7 +66,6 @@
     <TypeScriptCompile Include="pixi.d.ts" />
     <TypeScriptCompile Include="Player.ts" />
     <TypeScriptCompile Include="Preloader.ts" />
-    <Content Include="*.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\level\" />
