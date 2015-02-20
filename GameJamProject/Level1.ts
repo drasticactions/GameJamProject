@@ -4,12 +4,11 @@
 
         background: Phaser.Sprite;
         music: Phaser.Sound;
+        player: GameJam.Player;
 
         create() {
-
-            this.background = this.add.sprite(0, 0, 'level1');
             // TODO: Add Player
-            //this.player = new Ninja(this.game, 130, 284);
+            this.player = new Player(this.game, 60, 200);
         }
 
     }

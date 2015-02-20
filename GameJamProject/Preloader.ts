@@ -7,12 +7,14 @@
         preload() {
  
             //  Set-up our preloader sprite
-            this.preloadBar = this.add.sprite(200, 250, 'preloadBar');
+            this.preloadBar = this.add.sprite(50, 125, 'preloadBar');
             this.load.setPreloadSprite(this.preloadBar);
  
             //  Load our actual games assets
             this.load.image('logo', 'assets/logo.png');
-            this.load.image('level1', 'assets/level1.png');
+
+            // Load JSON Sprite Atlas
+            this.load.atlasJSONHash('rockman', 'sample.png', 'sample.json');
         }
 
         create() {

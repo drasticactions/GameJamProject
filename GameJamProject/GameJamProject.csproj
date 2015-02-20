@@ -22,7 +22,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.css" />
-    <Content Include="assets\level1.png" />
     <Content Include="assets\loader.png" />
     <Content Include="assets\logo.png" />
     <Content Include="assets\ninja\fall\0001.png" />
@@ -38,14 +37,29 @@
     <Content Include="assets\ninja\walk\0001.png" />
     <Content Include="assets\ninja\walk\0002.png" />
     <Content Include="assets\ninja\walk\0003.png" />
+    <Content Include="assets\rockman\level\level1.png" />
+    <Content Include="assets\rockman\player\walk\0001.png" />
+    <Content Include="assets\rockman\player\walk\0002.png" />
+    <Content Include="assets\rockman\player\walk\0003.png" />
+    <Content Include="assets\rockman\player\walk\0004.png" />
+    <Content Include="assets\rockman\player\walk\0005.png" />
+    <Content Include="assets\rockman\player\walk\0006.png" />
+    <Content Include="assets\rockman\player\walk\0007.png" />
+    <Content Include="assets\rockman\player\walk\0008.png" />
+    <Content Include="assets\rockman\player\walk\0009.png" />
+    <Content Include="assets\rockman\player\walk\0010.png" />
+    <Content Include="assets\rockman\player\walk\0011.png" />
+    <Content Include="assets\rockman\player\walk\0012.png" />
     <Content Include="index.html" />
     <Content Include="phaser.js" />
     <Content Include="phaser.map" />
     <Content Include="phaser.min.js" />
+    <Content Include="sample.png" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\ninja\stand\Thumbs.db" />
+    <Content Include="sample.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -61,6 +75,7 @@
     <TypeScriptCompile Include="MainMenu.ts" />
     <TypeScriptCompile Include="phaser.d.ts" />
     <TypeScriptCompile Include="pixi.d.ts" />
+    <TypeScriptCompile Include="Player.ts" />
     <TypeScriptCompile Include="Preloader.ts" />
   </ItemGroup>
   <ItemGroup>
