@@ -8,7 +8,7 @@
 
         create() {
             // TODO: Add Player
-            this.player = new Player(this.game, 60, 200);
+            this.player = new Player(this.game, 60, this.game.world.height - 150);
         }
 
     }

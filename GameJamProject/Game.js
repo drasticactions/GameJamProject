@@ -58,7 +58,7 @@ var GameJam;
         }
         Level1.prototype.create = function () {
             // TODO: Add Player
-            this.player = new GameJam.Player(this.game, 60, 200);
+            this.player = new GameJam.Player(this.game, 60, this.game.world.height - 150);
         };
         return Level1;
     })(Phaser.State);
@@ -96,6 +96,9 @@ var GameJam;
         function Player(game, x, y) {
             _super.call(this, game, x, y, 'rockman');
             this.game.physics.arcade.enableBody(this);
+            this.body.bounce.y = 0.2;
+            this.body.gravity.y = 300;
+            this.body.collideWorldBounds = true;
             this.anchor.setTo(0.5, 0);
             this.isJumping = false;
             this.animations.add('idle', [
@@ -134,25 +137,36 @@ var GameJam;
         }
         Player.prototype.update = function () {
             this.body.velocity.x = 0;
-            // TODO: Add logic for actually handling jumping.
-            if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
-            }
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
                 this.body.velocity.x = -150;
-                this.animations.play('walk');
+                if (!this.isJumping)
+                    this.animations.play('walk');
                 if (this.scale.x === 1) {
                     this.scale.x = -1;
                 }
             }
             else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
                 this.body.velocity.x = 150;
-                this.animations.play('walk');
+                if (!this.isJumping)
+                    this.animations.play('walk');
                 if (this.scale.x === -1) {
                     this.scale.x = 1;
                 }
             }
             else {
-                this.animations.play('idle');
+                if (!this.isJumping)
+                    this.animations.play('idle');
+            }
+            if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP) && this.body.blocked.down) {
+                this.isJumping = true;
+                this.body.velocity.y = -150;
+                this.animations.play('jump');
+            }
+            else if (!this.body.blocked.down) {
+                this.isJumping = true;
+            }
+            else {
+                this.isJumping = false;
             }
         };
         return Player;
