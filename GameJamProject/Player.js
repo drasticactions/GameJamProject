@@ -10,10 +10,12 @@ var GameJam;
         __extends(Player, _super);
         function Player(game, x, y) {
             _super.call(this, game, x, y, 'rockman');
+            this.duration = game.time.now;
             this.game.physics.arcade.enableBody(this);
             this.body.bounce.y = 0.2;
             this.body.gravity.y = 300;
             this.body.collideWorldBounds = true;
+            this.cursors = this.game.input.keyboard.createCursorKeys();
             this.anchor.setTo(0.5, 0);
             this.isJumping = false;
             this.animations.add('idle', [
@@ -47,6 +49,31 @@ var GameJam;
                 'player/walk/0011.png',
                 'player/walk/0012.png'
             ], 10, true, false);
+            this.animations.add('shoot', [
+                'player/shoot/0001.png',
+                'player/shoot/0002.png'
+            ], 10, true, false);
+            this.animations.add('shootjump', [
+                'player/shootjump/0001.png',
+                'player/shootjump/0002.png',
+                'player/shootjump/0003.png',
+                'player/shootjump/0004.png',
+                'player/shootjump/0005.png',
+                'player/shootjump/0006.png',
+                'player/shootjump/0007.png'
+            ], 10, false, false);
+            this.animations.add('shootrun', [
+                'player/shootrun/0001.png',
+                'player/shootrun/0002.png',
+                'player/shootrun/0003.png',
+                'player/shootrun/0004.png',
+                'player/shootrun/0005.png',
+                'player/shootrun/0006.png',
+                'player/shootrun/0007.png',
+                'player/shootrun/0008.png',
+                'player/shootrun/0009.png',
+                'player/shootrun/0010.png'
+            ], 10, true, false);
             this.animations.play('idle');
             game.add.existing(this);
         }
@@ -54,7 +81,21 @@ var GameJam;
         };
         Player.prototype.update = function () {
             this.body.velocity.x = 0;
-            if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
+            this.playerLeftRight();
+            this.playerJump();
+        };
+        Player.prototype.playerLeftRight = function () {
+            if (this.cursors.left.isDown && this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
+                this.body.velocity.x = -150;
+                if (!this.isJumping)
+                    this.animations.play('shootrun');
+                else
+                    this.animations.play('shootjump');
+                if (this.scale.x === 1) {
+                    this.scale.x = -1;
+                }
+            }
+            else if (this.cursors.left.isDown) {
                 this.body.velocity.x = -150;
                 if (!this.isJumping)
                     this.animations.play('walk');
@@ -62,7 +103,17 @@ var GameJam;
                     this.scale.x = -1;
                 }
             }
-            else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+            else if (this.cursors.right.isDown && this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
+                this.body.velocity.x = 150;
+                if (!this.isJumping)
+                    this.animations.play('shootrun');
+                else
+                    this.animations.play('shootjump');
+                if (this.scale.x === -1) {
+                    this.scale.x = 1;
+                }
+            }
+            else if (this.cursors.right.isDown) {
                 this.body.velocity.x = 150;
                 if (!this.isJumping)
                     this.animations.play('walk');
@@ -70,19 +121,31 @@ var GameJam;
                     this.scale.x = 1;
                 }
             }
+            else if (this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
+                if (!this.isJumping)
+                    this.animations.play('shoot');
+                else {
+                    this.animations.play('shootjump');
+                }
+            }
             else {
                 if (!this.isJumping)
                     this.animations.play('idle');
             }
-            if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
+        };
+        Player.prototype.playerJump = function () {
+            if (this.cursors.up.isDown && this.body.blocked.down) {
                 this.isJumping = true;
                 this.body.velocity.y = -150;
                 this.animations.play('jump');
+                this.duration = this.game.time.now + 750;
+            }
+            else if (!this.body.blocked.down) {
+                this.isJumping = true;
             }
             else {
                 this.isJumping = false;
             }
-            this.currentY = this.body.y;
         };
         return Player;
     })(Phaser.Sprite);

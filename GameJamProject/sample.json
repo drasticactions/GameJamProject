@@ -2,7 +2,7 @@
 
 "player/dash/0001.png":
 {
-	"frame": {"x":27,"y":395,"w":28,"h":31},
+	"frame": {"x":34,"y":579,"w":28,"h":31},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":31},
@@ -10,7 +10,7 @@
 },
 "player/dash/0002.png":
 {
-	"frame": {"x":23,"y":74,"w":38,"h":26},
+	"frame": {"x":2,"y":37,"w":38,"h":26},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":26},
@@ -18,7 +18,7 @@
 },
 "player/idle/0001.png":
 {
-	"frame": {"x":31,"y":2,"w":30,"h":34},
+	"frame": {"x":2,"y":619,"w":30,"h":34},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":34},
@@ -26,7 +26,7 @@
 },
 "player/idle/0002.png":
 {
-	"frame": {"x":31,"y":38,"w":30,"h":34},
+	"frame": {"x":2,"y":655,"w":30,"h":34},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":34},
@@ -34,7 +34,7 @@
 },
 "player/idle/0003.png":
 {
-	"frame": {"x":2,"y":208,"w":30,"h":34},
+	"frame": {"x":2,"y":691,"w":30,"h":34},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":34},
@@ -42,7 +42,7 @@
 },
 "player/jump/0001.png":
 {
-	"frame": {"x":2,"y":356,"w":24,"h":37},
+	"frame": {"x":38,"y":328,"w":24,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":37},
@@ -50,7 +50,7 @@
 },
 "player/jump/0002.png":
 {
-	"frame": {"x":2,"y":94,"w":15,"h":41},
+	"frame": {"x":41,"y":86,"w":15,"h":41},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":15,"h":41},
@@ -58,7 +58,7 @@
 },
 "player/jump/0003.png":
 {
-	"frame": {"x":2,"y":46,"w":19,"h":46},
+	"frame": {"x":42,"y":38,"w":19,"h":46},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":19,"h":46},
@@ -66,7 +66,7 @@
 },
 "player/jump/0004.png":
 {
-	"frame": {"x":38,"y":137,"w":23,"h":41},
+	"frame": {"x":39,"y":165,"w":23,"h":41},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":41},
@@ -74,7 +74,7 @@
 },
 "player/jump/0005.png":
 {
-	"frame": {"x":2,"y":2,"w":27,"h":42},
+	"frame": {"x":35,"y":504,"w":27,"h":42},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":42},
@@ -82,7 +82,7 @@
 },
 "player/jump/0006.png":
 {
-	"frame": {"x":2,"y":316,"w":24,"h":38},
+	"frame": {"x":38,"y":288,"w":24,"h":38},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":38},
@@ -90,15 +90,167 @@
 },
 "player/jump/0007.png":
 {
-	"frame": {"x":28,"y":359,"w":30,"h":32},
+	"frame": {"x":2,"y":835,"w":30,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":32},
 	"sourceSize": {"w":30,"h":32}
 },
+"player/shoot/0001.png":
+{
+	"frame": {"x":2,"y":727,"w":30,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":34},
+	"sourceSize": {"w":30,"h":34}
+},
+"player/shoot/0002.png":
+{
+	"frame": {"x":33,"y":869,"w":29,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":34},
+	"sourceSize": {"w":29,"h":34}
+},
+"player/shootjump/0001.png":
+{
+	"frame": {"x":2,"y":869,"w":29,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":37},
+	"sourceSize": {"w":29,"h":37}
+},
+"player/shootjump/0002.png":
+{
+	"frame": {"x":38,"y":245,"w":24,"h":41},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":41},
+	"sourceSize": {"w":24,"h":41}
+},
+"player/shootjump/0003.png":
+{
+	"frame": {"x":35,"y":456,"w":27,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":46},
+	"sourceSize": {"w":27,"h":46}
+},
+"player/shootjump/0004.png":
+{
+	"frame": {"x":2,"y":500,"w":31,"h":41},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":41},
+	"sourceSize": {"w":31,"h":41}
+},
+"player/shootjump/0005.png":
+{
+	"frame": {"x":2,"y":456,"w":31,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":42},
+	"sourceSize": {"w":31,"h":42}
+},
+"player/shootjump/0006.png":
+{
+	"frame": {"x":2,"y":579,"w":30,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":38},
+	"sourceSize": {"w":30,"h":38}
+},
+"player/shootjump/0007.png":
+{
+	"frame": {"x":2,"y":100,"w":36,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":32},
+	"sourceSize": {"w":36,"h":32}
+},
+"player/shootrun/0001.png":
+{
+	"frame": {"x":33,"y":905,"w":29,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":34},
+	"sourceSize": {"w":29,"h":34}
+},
+"player/shootrun/0002.png":
+{
+	"frame": {"x":2,"y":383,"w":32,"h":35},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":35},
+	"sourceSize": {"w":32,"h":35}
+},
+"player/shootrun/0003.png":
+{
+	"frame": {"x":2,"y":134,"w":35,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":34},
+	"sourceSize": {"w":35,"h":34}
+},
+"player/shootrun/0004.png":
+{
+	"frame": {"x":2,"y":2,"w":38,"h":33},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":33},
+	"sourceSize": {"w":38,"h":33}
+},
+"player/shootrun/0005.png":
+{
+	"frame": {"x":2,"y":241,"w":34,"h":33},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":33},
+	"sourceSize": {"w":34,"h":33}
+},
+"player/shootrun/0006.png":
+{
+	"frame": {"x":2,"y":543,"w":31,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":34},
+	"sourceSize": {"w":31,"h":34}
+},
+"player/shootrun/0007.png":
+{
+	"frame": {"x":2,"y":346,"w":33,"h":35},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":35},
+	"sourceSize": {"w":33,"h":35}
+},
+"player/shootrun/0008.png":
+{
+	"frame": {"x":2,"y":170,"w":35,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":34},
+	"sourceSize": {"w":35,"h":34}
+},
+"player/shootrun/0009.png":
+{
+	"frame": {"x":2,"y":65,"w":37,"h":33},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":33},
+	"sourceSize": {"w":37,"h":33}
+},
+"player/shootrun/0010.png":
+{
+	"frame": {"x":2,"y":206,"w":35,"h":33},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":33},
+	"sourceSize": {"w":35,"h":33}
+},
 "player/walk/0001.png":
 {
-	"frame": {"x":31,"y":2,"w":30,"h":34},
+	"frame": {"x":2,"y":619,"w":30,"h":34},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":34},
@@ -106,7 +258,7 @@
 },
 "player/walk/0002.png":
 {
-	"frame": {"x":2,"y":244,"w":30,"h":34},
+	"frame": {"x":2,"y":763,"w":30,"h":34},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":34},
@@ -114,7 +266,7 @@
 },
 "player/walk/0003.png":
 {
-	"frame": {"x":34,"y":288,"w":20,"h":34},
+	"frame": {"x":42,"y":2,"w":20,"h":34},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":34},
@@ -122,7 +274,7 @@
 },
 "player/walk/0004.png":
 {
-	"frame": {"x":2,"y":395,"w":23,"h":35},
+	"frame": {"x":39,"y":208,"w":23,"h":35},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":35},
@@ -130,7 +282,7 @@
 },
 "player/walk/0005.png":
 {
-	"frame": {"x":2,"y":172,"w":32,"h":34},
+	"frame": {"x":2,"y":420,"w":32,"h":34},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":34},
@@ -138,7 +290,7 @@
 },
 "player/walk/0006.png":
 {
-	"frame": {"x":19,"y":102,"w":34,"h":33},
+	"frame": {"x":2,"y":276,"w":34,"h":33},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":33},
@@ -146,7 +298,7 @@
 },
 "player/walk/0007.png":
 {
-	"frame": {"x":34,"y":217,"w":26,"h":33},
+	"frame": {"x":36,"y":404,"w":26,"h":33},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":33},
@@ -154,7 +306,7 @@
 },
 "player/walk/0008.png":
 {
-	"frame": {"x":34,"y":252,"w":22,"h":34},
+	"frame": {"x":40,"y":129,"w":22,"h":34},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":34},
@@ -162,7 +314,7 @@
 },
 "player/walk/0009.png":
 {
-	"frame": {"x":36,"y":180,"w":25,"h":35},
+	"frame": {"x":37,"y":367,"w":25,"h":35},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":35},
@@ -170,7 +322,7 @@
 },
 "player/walk/0010.png":
 {
-	"frame": {"x":2,"y":280,"w":30,"h":34},
+	"frame": {"x":2,"y":799,"w":30,"h":34},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":34},
@@ -178,7 +330,7 @@
 },
 "player/walk/0011.png":
 {
-	"frame": {"x":2,"y":137,"w":34,"h":33},
+	"frame": {"x":2,"y":311,"w":34,"h":33},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":33},
@@ -186,7 +338,7 @@
 },
 "player/walk/0012.png":
 {
-	"frame": {"x":28,"y":324,"w":29,"h":33},
+	"frame": {"x":2,"y":908,"w":29,"h":33},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":33},
@@ -197,8 +349,8 @@
 	"version": "1.0",
 	"image": "sample.png",
 	"format": "RGBA8888",
-	"size": {"w":63,"h":432},
+	"size": {"w":64,"h":943},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:7ad9643b65424de2b3b9b3df7ccba476:aeffff96ad64cbebc4bee22a25fd1f0c:0f4259f97f50cf909faace4f00860e58$"
+	"smartupdate": "$TexturePacker:SmartUpdate:76153221e8ce2264782f5bcef9f6a133:7c318f52f35b9eb0a06ecfeb850eb4b2:0f4259f97f50cf909faace4f00860e58$"
 }
 }
