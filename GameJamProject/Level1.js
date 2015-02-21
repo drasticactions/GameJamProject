@@ -12,7 +12,20 @@ var GameJam;
             _super.apply(this, arguments);
         }
         Level1.prototype.create = function () {
+            this.map = this.game.add.tilemap('level1Tiles');
+            this.map.addTilesetImage('tiles_spritesheet', 'gameTiles');
+            this.backgroundlayer = this.map.createLayer('backgroundLayer');
+            this.blockedLayer = this.map.createLayer('blockedLayer');
+            this.map.setCollisionBetween(1, 100000, true, 'blockedLayer');
+            this.backgroundlayer.resizeWorld();
+            this.game.physics.startSystem(Phaser.Physics.ARCADE);
             this.player = new GameJam.Player(this.game, 60, this.game.world.height - 150);
+            this.game.camera.follow(this.player);
+        };
+        Level1.prototype.playerHit = function () {
+        };
+        Level1.prototype.update = function () {
+            this.game.physics.arcade.collide(this.player, this.blockedLayer, this.playerHit, null, this);
         };
         return Level1;
     })(Phaser.State);

@@ -18,12 +18,15 @@
 
             if (this.game.device.desktop) {
                 //  If you have any desktop specific settings, they can go in here
-                //this.stage.scale.pageAlignHorizontally = true;
+                //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             }
             else {
                 //  Same goes for mobile settings.
             }
-
+            //Assigning Up, Down, Left and Right to a variable
+            var arrow = this.game.input.keyboard.createCursorKeys();
+            //This will stop the arrow keys from scrolling the page
+            this.game.input.keyboard.addKeyCapture(arrow);
             this.game.physics.startSystem(Phaser.Physics.ARCADE);
             this.game.state.start('Preloader', true, false);
 

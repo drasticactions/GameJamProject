@@ -24,6 +24,7 @@
     <Content Include="app.css" />
     <Content Include="assets\loader.png" />
     <Content Include="assets\logo.png" />
+    <Content Include="assets\platform.png" />
     <Content Include="assets\rockman\player\walk\0001.png" />
     <Content Include="assets\rockman\player\walk\0002.png" />
     <Content Include="assets\rockman\player\walk\0003.png" />
@@ -36,6 +37,7 @@
     <Content Include="assets\rockman\player\walk\0010.png" />
     <Content Include="assets\rockman\player\walk\0011.png" />
     <Content Include="assets\rockman\player\walk\0012.png" />
+    <Content Include="assets\tiles_spritesheet.png" />
     <Content Include="Game.js" />
     <Content Include="index.html" />
     <Content Include="phaser.js" />
@@ -47,6 +49,7 @@
   <ItemGroup>
     <Content Include="sample.json" />
     <Content Include="game.js.map" />
+    <Content Include="assets\tileset\level1.json" />
     <None Include="teamb-gamejam - FTP.pubxml" />
     <None Include="teamb-gamejam - Web Deploy.pubxml" />
     <None Include="web.Debug.config">

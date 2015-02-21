@@ -54,10 +54,12 @@
 
         }
 
+        isDoubleTap() {
+
+        }
+
         update() {
-
             this.body.velocity.x = 0;
-
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
 
                 this.body.velocity.x = -150;
@@ -87,20 +89,18 @@
             // If we're on the ground, let the player jump.
             // TODO: Move to "OnDown" event, rather than check on update.
 
-            if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP) && this.body.blocked.down) {
+            if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
                 this.isJumping = true;
                 this.body.velocity.y = -150;
                 this.animations.play('jump');
-            }
-            else if (!this.body.blocked.down) {
-                // Still in the air, so still jumping.
-                this.isJumping = true;
             } else {
                 this.isJumping = false;
             }
-
+            this.currentY = this.body.y;
         }
-
+        currentY: number;
+        duration: number;
+        isDoubleTapping: boolean;
         isDashing: boolean;
         isJumping: boolean;
     }

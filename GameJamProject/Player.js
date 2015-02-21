@@ -50,6 +50,8 @@ var GameJam;
             this.animations.play('idle');
             game.add.existing(this);
         }
+        Player.prototype.isDoubleTap = function () {
+        };
         Player.prototype.update = function () {
             this.body.velocity.x = 0;
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
@@ -72,17 +74,15 @@ var GameJam;
                 if (!this.isJumping)
                     this.animations.play('idle');
             }
-            if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP) && this.body.blocked.down) {
+            if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
                 this.isJumping = true;
                 this.body.velocity.y = -150;
                 this.animations.play('jump');
             }
-            else if (!this.body.blocked.down) {
-                this.isJumping = true;
-            }
             else {
                 this.isJumping = false;
             }
+            this.currentY = this.body.y;
         };
         return Player;
     })(Phaser.Sprite);

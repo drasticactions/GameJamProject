@@ -12,9 +12,14 @@
  
             //  Load our actual games assets
             this.load.image('logo', 'assets/logo.png');
+            this.load.image('ground', 'assets/platform.png');
 
             // Load JSON Sprite Atlas
             this.load.atlasJSONHash('rockman', 'sample.png', 'sample.json');
+
+            this.load.tilemap('level1Tiles', 'assets/tileset/level1.json', null, Phaser.Tilemap.TILED_JSON);
+
+            this.load.image('gameTiles', 'assets/tiles_spritesheet.png');
         }
 
         create() {

@@ -15,7 +15,10 @@ var GameJam;
             this.preloadBar = this.add.sprite(50, 125, 'preloadBar');
             this.load.setPreloadSprite(this.preloadBar);
             this.load.image('logo', 'assets/logo.png');
+            this.load.image('ground', 'assets/platform.png');
             this.load.atlasJSONHash('rockman', 'sample.png', 'sample.json');
+            this.load.tilemap('level1Tiles', 'assets/tileset/level1.json', null, Phaser.Tilemap.TILED_JSON);
+            this.load.image('gameTiles', 'assets/tiles_spritesheet.png');
         };
         Preloader.prototype.create = function () {
             var tween = this.add.tween(this.preloadBar).to({ alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);

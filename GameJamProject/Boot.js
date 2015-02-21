@@ -21,6 +21,8 @@ var GameJam;
             }
             else {
             }
+            var arrow = this.game.input.keyboard.createCursorKeys();
+            this.game.input.keyboard.addKeyCapture(arrow);
             this.game.physics.startSystem(Phaser.Physics.ARCADE);
             this.game.state.start('Preloader', true, false);
         };
