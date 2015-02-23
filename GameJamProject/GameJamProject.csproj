@@ -22,8 +22,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="assets\captain\01.png" />
     <Content Include="assets\loader.png" />
     <Content Include="assets\logo.png" />
+    <Content Include="assets\love\01.png" />
     <Content Include="assets\platform.png" />
     <Content Include="assets\rockman\player\walk\0001.png" />
     <Content Include="assets\rockman\player\walk\0002.png" />
@@ -50,6 +52,7 @@
     <Content Include="sample.json" />
     <Content Include="game.js.map" />
     <Content Include="assets\tileset\level1.json" />
+    <Content Include="assets\dialog\level1\scene1.json" />
     <None Include="teamb-gamejam - FTP.pubxml" />
     <None Include="teamb-gamejam - Web Deploy.pubxml" />
     <None Include="web.Debug.config">
@@ -62,6 +65,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="Boot.ts" />
+    <TypeScriptCompile Include="DialogTest.ts" />
     <TypeScriptCompile Include="Game.ts" />
     <TypeScriptCompile Include="Level1.ts" />
     <TypeScriptCompile Include="MainMenu.ts" />

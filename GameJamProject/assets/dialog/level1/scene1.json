@@ -1,0 +1,30 @@
+{
+    "characters": [
+        {
+            "id": 0,
+            "name": "Captain Novolin",
+            "image": "captain",
+            "position" : "left"
+        },
+        {
+            "id": 1,
+            "name": "Courtney Love",
+            "image": "love",
+            "position" : "right"
+        }
+    ],
+    "script": [
+        {
+            "id": 0,
+            "animation": 0,
+            "new": true,
+            "text": "I'm Captain Novolin! Where is Blubberman!?!"
+        },
+        {
+            "id": 1,
+            "animation": 0,
+            "text": "まったく分からない! ごめんね！",
+            "new": true
+        }
+    ]
+}

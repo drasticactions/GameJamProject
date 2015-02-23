@@ -22,7 +22,7 @@ var GameJam;
             tween.onComplete.add(this.startGame, this);
         };
         MainMenu.prototype.startGame = function () {
-            this.game.state.start('Level1', true, false);
+            this.game.state.start('DialogTest', true, false);
         };
         return MainMenu;
     })(Phaser.State);
