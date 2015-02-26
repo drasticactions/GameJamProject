@@ -26,6 +26,7 @@
     <Content Include="assets\loader.png" />
     <Content Include="assets\logo.png" />
     <Content Include="assets\love\01.png" />
+    <Content Include="assets\other_ball.png" />
     <Content Include="assets\platform.png" />
     <Content Include="assets\rockman\player\walk\0001.png" />
     <Content Include="assets\rockman\player\walk\0002.png" />

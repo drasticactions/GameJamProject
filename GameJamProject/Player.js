@@ -9,6 +9,8 @@ var GameJam;
     var Player = (function (_super) {
         __extends(Player, _super);
         function Player(game, x, y) {
+            this.fireRate = 100;
+            this.nextFire = 0;
             _super.call(this, game, x, y, 'rockman');
             this.duration = game.time.now;
             this.game.physics.arcade.enableBody(this);
@@ -18,6 +20,12 @@ var GameJam;
             this.cursors = this.game.input.keyboard.createCursorKeys();
             this.anchor.setTo(0.5, 0);
             this.isJumping = false;
+            this.bullets = game.add.group();
+            this.bullets.enableBody = true;
+            this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
+            this.bullets.createMultiple(50, 'bullet');
+            this.bullets.setAll('checkWorldBounds', true);
+            this.bullets.setAll('outOfBoundsKill', true);
             this.animations.add('idle', [
                 'player/idle/0001.png',
                 'player/idle/0002.png',
@@ -77,12 +85,23 @@ var GameJam;
             this.animations.play('idle');
             game.add.existing(this);
         }
+        Player.prototype.fire = function () {
+            if (this.game.time.now > this.nextFire && this.bullets.countDead() > 0) {
+                this.nextFire = this.game.time.now + this.fireRate;
+                var bullet = this.bullets.getFirstDead();
+                bullet.reset(this.x - 8, this.y - 8);
+                this.game.physics.arcade.moveToPointer(bullet, 300);
+            }
+        };
         Player.prototype.isDoubleTap = function () {
         };
         Player.prototype.update = function () {
             this.body.velocity.x = 0;
             this.playerLeftRight();
             this.playerJump();
+            if (this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
+                this.fire();
+            }
         };
         Player.prototype.playerLeftRight = function () {
             if (this.cursors.left.isDown && this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {

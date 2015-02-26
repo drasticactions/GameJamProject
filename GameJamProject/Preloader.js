@@ -21,6 +21,8 @@ var GameJam;
             this.load.atlasJSONHash('rockman', 'sample.png', 'sample.json');
             this.game.load.json('dialog1', 'assets/dialog/level1/scene1.json');
             this.load.tilemap('level1Tiles', 'assets/tileset/level1.json', null, Phaser.Tilemap.TILED_JSON);
+            this.game.load.image('bullet', 'assets/purple_ball.png');
+            this.game.load.image('bullet2', 'assets/other_ball.png');
             this.load.image('gameTiles', 'assets/tiles_spritesheet.png');
         };
         Preloader.prototype.create = function () {

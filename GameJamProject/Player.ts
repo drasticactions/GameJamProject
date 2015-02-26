@@ -1,10 +1,12 @@
 ﻿module GameJam {
 
     export class Player extends Phaser.Sprite {
-
-
+        bullets: Phaser.Group;
+        fireRate: number;
+        nextFire: number;
         constructor(game: Phaser.Game, x: number, y: number) {
-
+            this.fireRate = 100;
+            this.nextFire = 0;
             super(game, x, y, 'rockman');
             this.duration = game.time.now;
             this.game.physics.arcade.enableBody(this);
@@ -14,6 +16,14 @@
             this.cursors = this.game.input.keyboard.createCursorKeys();
             this.anchor.setTo(0.5, 0);
             this.isJumping = false;
+
+            this.bullets = game.add.group();
+            this.bullets.enableBody = true;
+            this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
+            this.bullets.createMultiple(50, 'bullet');
+            this.bullets.setAll('checkWorldBounds', true);
+            this.bullets.setAll('outOfBoundsKill', true);
+
             this.animations.add('idle',[
                 'player/idle/0001.png',
                 'player/idle/0002.png',
@@ -83,6 +93,18 @@
 
         }
 
+        fire() {
+            if (this.game.time.now > this.nextFire && this.bullets.countDead() > 0) {
+                this.nextFire = this.game.time.now + this.fireRate;
+
+                var bullet = this.bullets.getFirstDead();
+
+                bullet.reset(this.x - 8, this.y - 8);
+
+                this.game.physics.arcade.moveToPointer(bullet, 300);
+            }
+        }
+
         isDoubleTap() {
 
         }
@@ -93,6 +115,10 @@
             this.playerLeftRight();
 
             this.playerJump();
+
+            if (this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
+                this.fire();
+            }
         }
 
         playerLeftRight() {

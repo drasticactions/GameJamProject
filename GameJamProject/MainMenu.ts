@@ -27,7 +27,7 @@
 
         startGame() {
 
-            this.game.state.start('DialogTest', true, false);
+            this.game.state.start('Level1', true, false);
 
         }
 
