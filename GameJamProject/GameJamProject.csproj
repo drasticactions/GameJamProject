@@ -23,6 +23,7 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="assets\captain\01.png" />
+    <Content Include="assets\enemy.png" />
     <Content Include="assets\loader.png" />
     <Content Include="assets\logo.png" />
     <Content Include="assets\love\01.png" />
@@ -66,8 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="BananaEnemy.ts" />
     <TypeScriptCompile Include="Boot.ts" />
     <TypeScriptCompile Include="DialogTest.ts" />
+    <TypeScriptCompile Include="Enemy.ts" />
     <TypeScriptCompile Include="Game.ts" />
     <TypeScriptCompile Include="Level1.ts" />
     <TypeScriptCompile Include="MainMenu.ts" />

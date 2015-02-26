@@ -5,6 +5,9 @@
         fireRate: number;
         nextFire: number;
         facingRight: boolean;
+        invincible: boolean;
+        health: number;
+
         constructor(game: Phaser.Game, x: number, y: number) {
             this.fireRate = 100;
             this.nextFire = 0;
@@ -13,6 +16,7 @@
             this.game.physics.arcade.enableBody(this);
             this.body.bounce.y = 0.2;
             this.body.gravity.y = 300;
+            this.checkWorldBounds = true;
             this.body.collideWorldBounds = true;
             this.cursors = this.game.input.keyboard.createCursorKeys();
             this.anchor.setTo(0.5, 0);
@@ -103,7 +107,6 @@
                 if (bullet === null || bullet === undefined) return;
 
                 bullet.revive();
-
                 bullet.checkWorldBounds = true;
                 bullet.outOfBoundsKill = true;
 

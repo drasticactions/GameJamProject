@@ -18,6 +18,7 @@ var GameJam;
             this.load.image('ground', 'assets/platform.png');
             this.load.image('captain', 'assets/captain/01.png');
             this.load.image('love', 'assets/love/01.png');
+            this.load.image('enemy', 'assets/enemy.png');
             this.load.atlasJSONHash('rockman', 'sample.png', 'sample.json');
             this.game.load.json('dialog1', 'assets/dialog/level1/scene1.json');
             this.load.tilemap('level1Tiles', 'assets/tileset/level1.json', null, Phaser.Tilemap.TILED_JSON);

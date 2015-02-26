@@ -15,6 +15,7 @@
             this.load.image('ground', 'assets/platform.png');
             this.load.image('captain', 'assets/captain/01.png');
             this.load.image('love', 'assets/love/01.png');
+            this.load.image('enemy', 'assets/enemy.png');
 
             // Load JSON Sprite Atlas
             this.load.atlasJSONHash('rockman', 'sample.png', 'sample.json');

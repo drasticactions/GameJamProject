@@ -16,6 +16,7 @@ var GameJam;
             this.game.physics.arcade.enableBody(this);
             this.body.bounce.y = 0.2;
             this.body.gravity.y = 300;
+            this.checkWorldBounds = true;
             this.body.collideWorldBounds = true;
             this.cursors = this.game.input.keyboard.createCursorKeys();
             this.anchor.setTo(0.5, 0);
