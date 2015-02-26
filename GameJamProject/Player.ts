@@ -4,6 +4,7 @@
         bullets: Phaser.Group;
         fireRate: number;
         nextFire: number;
+        facingRight: boolean;
         constructor(game: Phaser.Game, x: number, y: number) {
             this.fireRate = 100;
             this.nextFire = 0;
@@ -99,9 +100,18 @@
 
                 var bullet = this.bullets.getFirstDead();
 
-                bullet.reset(this.x - 8, this.y - 8);
+                if (bullet === null || bullet === undefined) return;
 
-                this.game.physics.arcade.moveToPointer(bullet, 300);
+                bullet.revive();
+
+                bullet.checkWorldBounds = true;
+                bullet.outOfBoundsKill = true;
+
+                bullet.reset(this.x, this.y);
+                bullet.rotation = this.rotation;
+                var bulletSpeed = this.facingRight ? 700 : -700;
+                bullet.body.velocity.x = Math.cos(bullet.rotation) * bulletSpeed;
+                bullet.body.velocity.y = Math.sin(bullet.rotation) * bulletSpeed;
             }
         }
 
@@ -124,6 +134,7 @@
         playerLeftRight() {
 
             if (this.cursors.left.isDown && this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
+                this.facingRight = false;
                 this.body.velocity.x = -150;
                 // If we're jumping, don't fire the shoot animation.
                 if (!this.isJumping)
@@ -136,7 +147,7 @@
                 }
             }
             else if (this.cursors.left.isDown) {
-
+                this.facingRight = false;
                 this.body.velocity.x = -150;
                 // If we're jumping, don't fire the walk animation.
                 if (!this.isJumping)
@@ -148,6 +159,7 @@
             }
             else if (this.cursors.right.isDown && this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
                 this.body.velocity.x = 150;
+                this.facingRight = true;
                 // If we're jumping, don't fire the shoot animation.
                 if (!this.isJumping)
                     this.animations.play('shootrun');
@@ -159,7 +171,7 @@
                 }
             }
             else if (this.cursors.right.isDown) {
-
+                this.facingRight = true;
                 this.body.velocity.x = 150;
                 if (!this.isJumping)
                     this.animations.play('walk');

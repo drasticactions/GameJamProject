@@ -89,8 +89,16 @@ var GameJam;
             if (this.game.time.now > this.nextFire && this.bullets.countDead() > 0) {
                 this.nextFire = this.game.time.now + this.fireRate;
                 var bullet = this.bullets.getFirstDead();
-                bullet.reset(this.x - 8, this.y - 8);
-                this.game.physics.arcade.moveToPointer(bullet, 300);
+                if (bullet === null || bullet === undefined)
+                    return;
+                bullet.revive();
+                bullet.checkWorldBounds = true;
+                bullet.outOfBoundsKill = true;
+                bullet.reset(this.x, this.y);
+                bullet.rotation = this.rotation;
+                var bulletSpeed = this.facingRight ? 700 : -700;
+                bullet.body.velocity.x = Math.cos(bullet.rotation) * bulletSpeed;
+                bullet.body.velocity.y = Math.sin(bullet.rotation) * bulletSpeed;
             }
         };
         Player.prototype.isDoubleTap = function () {
@@ -105,6 +113,7 @@ var GameJam;
         };
         Player.prototype.playerLeftRight = function () {
             if (this.cursors.left.isDown && this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
+                this.facingRight = false;
                 this.body.velocity.x = -150;
                 if (!this.isJumping)
                     this.animations.play('shootrun');
@@ -115,6 +124,7 @@ var GameJam;
                 }
             }
             else if (this.cursors.left.isDown) {
+                this.facingRight = false;
                 this.body.velocity.x = -150;
                 if (!this.isJumping)
                     this.animations.play('walk');
@@ -124,6 +134,7 @@ var GameJam;
             }
             else if (this.cursors.right.isDown && this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
                 this.body.velocity.x = 150;
+                this.facingRight = true;
                 if (!this.isJumping)
                     this.animations.play('shootrun');
                 else
@@ -133,6 +144,7 @@ var GameJam;
                 }
             }
             else if (this.cursors.right.isDown) {
+                this.facingRight = true;
                 this.body.velocity.x = 150;
                 if (!this.isJumping)
                     this.animations.play('walk');
