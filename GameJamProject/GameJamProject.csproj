@@ -69,15 +69,19 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="BananaEnemy.ts" />
     <TypeScriptCompile Include="Boot.ts" />
+    <TypeScriptCompile Include="Celery.ts" />
+    <TypeScriptCompile Include="Cherry.ts" />
     <TypeScriptCompile Include="DialogTest.ts" />
     <TypeScriptCompile Include="Enemy.ts" />
     <TypeScriptCompile Include="Game.ts" />
     <TypeScriptCompile Include="Level1.ts" />
     <TypeScriptCompile Include="MainMenu.ts" />
+    <TypeScriptCompile Include="Onion.ts" />
     <TypeScriptCompile Include="phaser.d.ts" />
     <TypeScriptCompile Include="pixi.d.ts" />
     <TypeScriptCompile Include="Player.ts" />
     <TypeScriptCompile Include="Preloader.ts" />
+    <TypeScriptCompile Include="Tomato.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\level\" />
@@ -110,7 +114,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
     <TypeScriptOutFile>game.js</TypeScriptOutFile>
   </PropertyGroup>

@@ -30,66 +30,66 @@
             this.bullets.setAll('outOfBoundsKill', true);
 
             this.animations.add('idle',[
-                'player/idle/0001.png',
-                'player/idle/0002.png',
-                'player/idle/0003.png'
+                'rockman/player/idle/0001.png',
+                'rockman/player/idle/0002.png',
+                'rockman/player/idle/0003.png'
             ], 10, true);
 
             this.animations.add('dash', [
-                'player/dash/0001.png',
-                'player/dash/0002.png',
-                'player/dash/0003.png'
+                'rockman/player/dash/0001.png',
+                'rockman/player/dash/0002.png',
+                'rockman/player/dash/0003.png'
             ], 10, true, false);
 
             this.animations.add('jump', [
-                'player/jump/0001.png',
-                'player/jump/0002.png',
-                'player/jump/0003.png',
-                'player/jump/0004.png',
-                'player/jump/0005.png',
-                'player/jump/0006.png',
-                'player/jump/0007.png'
+                'rockman/player/jump/0001.png',
+                'rockman/player/jump/0002.png',
+                'rockman/player/jump/0003.png',
+                'rockman/player/jump/0004.png',
+                'rockman/player/jump/0005.png',
+                'rockman/player/jump/0006.png',
+                'rockman/player/jump/0007.png'
             ], 10, false, false);
 
             this.animations.add('walk', [
-                'player/walk/0003.png',
-                'player/walk/0004.png',
-                'player/walk/0005.png',
-                'player/walk/0006.png',
-                'player/walk/0007.png',
-                'player/walk/0008.png',
-                'player/walk/0009.png',
-                'player/walk/0010.png',
-                'player/walk/0011.png',
-                'player/walk/0012.png'
+                'rockman/player/walk/0003.png',
+                'rockman/player/walk/0004.png',
+                'rockman/player/walk/0005.png',
+                'rockman/player/walk/0006.png',
+                'rockman/player/walk/0007.png',
+                'rockman/player/walk/0008.png',
+                'rockman/player/walk/0009.png',
+                'rockman/player/walk/0010.png',
+                'rockman/player/walk/0011.png',
+                'rockman/player/walk/0012.png'
             ], 10, true, false);
 
             this.animations.add('shoot', [
-                'player/shoot/0001.png',
-                'player/shoot/0002.png'
+                'rockman/player/shoot/0001.png',
+                'rockman/player/shoot/0002.png'
             ], 10, true, false);
 
             this.animations.add('shootjump', [
-                'player/shootjump/0001.png',
-                'player/shootjump/0002.png',
-                'player/shootjump/0003.png',
-                'player/shootjump/0004.png',
-                'player/shootjump/0005.png',
-                'player/shootjump/0006.png',
-                'player/shootjump/0007.png'
+                'rockman/player/shootjump/0001.png',
+                'rockman/player/shootjump/0002.png',
+                'rockman/player/shootjump/0003.png',
+                'rockman/player/shootjump/0004.png',
+                'rockman/player/shootjump/0005.png',
+                'rockman/player/shootjump/0006.png',
+                'rockman/player/shootjump/0007.png'
             ], 10, false, false);
 
             this.animations.add('shootrun', [
-                'player/shootrun/0001.png',
-                'player/shootrun/0002.png',
-                'player/shootrun/0003.png',
-                'player/shootrun/0004.png',
-                'player/shootrun/0005.png',
-                'player/shootrun/0006.png',
-                'player/shootrun/0007.png',
-                'player/shootrun/0008.png',
-                'player/shootrun/0009.png',
-                'player/shootrun/0010.png'
+                'rockman/player/shootrun/0001.png',
+                'rockman/player/shootrun/0002.png',
+                'rockman/player/shootrun/0003.png',
+                'rockman/player/shootrun/0004.png',
+                'rockman/player/shootrun/0005.png',
+                'rockman/player/shootrun/0006.png',
+                'rockman/player/shootrun/0007.png',
+                'rockman/player/shootrun/0008.png',
+                'rockman/player/shootrun/0009.png',
+                'rockman/player/shootrun/0010.png'
             ], 10, true, false);
 
             this.animations.play('idle');

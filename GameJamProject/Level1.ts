@@ -26,7 +26,11 @@
             this.enemies.enableBody = true;
             this.enemies.physicsBodyType = Phaser.Physics.ARCADE;
             this.player.events.onOutOfBounds.add(this.killPlayer, this);
-            this.enemies.add(new BananaEnemy(this.game, 160, this.game.world.height - 150));
+            this.enemies.add(new BananaEnemy(this.game, 160, this.game.world.height - 200));
+            this.enemies.add(new Tomato(this.game, 100, this.game.world.height - 180));
+            this.enemies.add(new Onion(this.game, 200, this.game.world.height - 260));
+            this.enemies.add(new Cherry(this.game, 250, this.game.world.height - 260));
+            this.enemies.add(new Celery(this.game, 280, this.game.world.height - 260));
             this.game.add.existing(this.enemies);
 
             this.game.camera.follow(this.player);
