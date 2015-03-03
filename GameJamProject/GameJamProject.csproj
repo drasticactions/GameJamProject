@@ -22,8 +22,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="assets\bigFire1.png" />
+    <Content Include="assets\bigFire2.png" />
     <Content Include="assets\captain\01.png" />
     <Content Include="assets\enemy.png" />
+    <Content Include="assets\fire1.png" />
+    <Content Include="assets\fire2.png" />
     <Content Include="assets\loader.png" />
     <Content Include="assets\logo.png" />
     <Content Include="assets\love\01.png" />
@@ -42,7 +46,20 @@
     <Content Include="assets\rockman\player\walk\0010.png" />
     <Content Include="assets\rockman\player\walk\0011.png" />
     <Content Include="assets\rockman\player\walk\0012.png" />
+    <Content Include="assets\star1.png" />
+    <Content Include="assets\star2.png" />
     <Content Include="assets\tiles_spritesheet.png" />
+    <Content Include="assets\witch\player\idle\0001.png" />
+    <Content Include="assets\witch\player\jump\W_Jump1.png" />
+    <Content Include="assets\witch\player\jump\W_Jump2.png" />
+    <Content Include="assets\witch\player\sit\0001.png" />
+    <Content Include="assets\witch\player\walk\0001.png" />
+    <Content Include="assets\witch\player\walk\0002.png" />
+    <Content Include="assets\witch\player\walk\0003.png" />
+    <Content Include="assets\witch\player\walk\0004.png" />
+    <Content Include="assets\witch\player\walk\0005.png" />
+    <Content Include="assets\witch\player\witchchara.png" />
+    <Content Include="assets\witch\player\W_arm1.png" />
     <Content Include="Game.js" />
     <Content Include="index.html" />
     <Content Include="phaser.js" />

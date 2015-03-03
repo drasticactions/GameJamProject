@@ -19,7 +19,7 @@
             this.checkWorldBounds = true;
             this.body.collideWorldBounds = true;
             this.cursors = this.game.input.keyboard.createCursorKeys();
-            this.anchor.setTo(0.5, 0);
+            this.anchor.setTo(0.5, 0.5);
             this.isJumping = false;
 
             this.bullets = game.add.group();
@@ -30,66 +30,20 @@
             this.bullets.setAll('outOfBoundsKill', true);
 
             this.animations.add('idle',[
-                'rockman/player/idle/0001.png',
-                'rockman/player/idle/0002.png',
-                'rockman/player/idle/0003.png'
+                'witch/player/idle/0001.png'
             ], 10, true);
 
-            this.animations.add('dash', [
-                'rockman/player/dash/0001.png',
-                'rockman/player/dash/0002.png',
-                'rockman/player/dash/0003.png'
-            ], 10, true, false);
-
             this.animations.add('jump', [
-                'rockman/player/jump/0001.png',
-                'rockman/player/jump/0002.png',
-                'rockman/player/jump/0003.png',
-                'rockman/player/jump/0004.png',
-                'rockman/player/jump/0005.png',
-                'rockman/player/jump/0006.png',
-                'rockman/player/jump/0007.png'
+                'witch/player/jump/W_Jump1.png',
+                'witch/player/jump/W_Jump2.png'
             ], 10, false, false);
 
             this.animations.add('walk', [
-                'rockman/player/walk/0003.png',
-                'rockman/player/walk/0004.png',
-                'rockman/player/walk/0005.png',
-                'rockman/player/walk/0006.png',
-                'rockman/player/walk/0007.png',
-                'rockman/player/walk/0008.png',
-                'rockman/player/walk/0009.png',
-                'rockman/player/walk/0010.png',
-                'rockman/player/walk/0011.png',
-                'rockman/player/walk/0012.png'
-            ], 10, true, false);
-
-            this.animations.add('shoot', [
-                'rockman/player/shoot/0001.png',
-                'rockman/player/shoot/0002.png'
-            ], 10, true, false);
-
-            this.animations.add('shootjump', [
-                'rockman/player/shootjump/0001.png',
-                'rockman/player/shootjump/0002.png',
-                'rockman/player/shootjump/0003.png',
-                'rockman/player/shootjump/0004.png',
-                'rockman/player/shootjump/0005.png',
-                'rockman/player/shootjump/0006.png',
-                'rockman/player/shootjump/0007.png'
-            ], 10, false, false);
-
-            this.animations.add('shootrun', [
-                'rockman/player/shootrun/0001.png',
-                'rockman/player/shootrun/0002.png',
-                'rockman/player/shootrun/0003.png',
-                'rockman/player/shootrun/0004.png',
-                'rockman/player/shootrun/0005.png',
-                'rockman/player/shootrun/0006.png',
-                'rockman/player/shootrun/0007.png',
-                'rockman/player/shootrun/0008.png',
-                'rockman/player/shootrun/0009.png',
-                'rockman/player/shootrun/0010.png'
+                'witch/player/walk/0001.png',
+                'witch/player/walk/0002.png',
+                'witch/player/walk/0003.png',
+                'witch/player/walk/0004.png',
+                'witch/player/walk/0005.png'
             ], 10, true, false);
 
             this.animations.play('idle');
@@ -111,7 +65,8 @@
                 bullet.outOfBoundsKill = true;
 
                 bullet.reset(this.x, this.y);
-                bullet.rotation = this.rotation;
+                var rotationSpeed = this.facingRight ? -250 : 250;
+                bullet.rotation = this.isJumping ? rotationSpeed : this.rotation;
                 var bulletSpeed = this.facingRight ? 700 : -700;
                 bullet.body.velocity.x = Math.cos(bullet.rotation) * bulletSpeed;
                 bullet.body.velocity.y = Math.sin(bullet.rotation) * bulletSpeed;
@@ -140,10 +95,10 @@
                 this.facingRight = false;
                 this.body.velocity.x = -150;
                 // If we're jumping, don't fire the shoot animation.
-                if (!this.isJumping)
-                    this.animations.play('shootrun');
-                else 
-                    this.animations.play('shootjump');
+                //if (!this.isJumping)
+                //    this.animations.play('shootrun');
+               // else 
+                //    this.animations.play('shootjump');
 
                 if (this.scale.x === 1) {
                     this.scale.x = -1;
@@ -164,10 +119,10 @@
                 this.body.velocity.x = 150;
                 this.facingRight = true;
                 // If we're jumping, don't fire the shoot animation.
-                if (!this.isJumping)
-                    this.animations.play('shootrun');
-                else
-                    this.animations.play('shootjump');
+                //if (!this.isJumping)
+                //    this.animations.play('shootrun');
+                //else
+                //    this.animations.play('shootjump');
 
                 if (this.scale.x === -1) {
                     this.scale.x = 1;
@@ -184,11 +139,11 @@
                 }
             }
             else if (this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
-                if (!this.isJumping)
-                    this.animations.play('shoot');
-                else {
-                    this.animations.play('shootjump');
-                }
+                //if (!this.isJumping)
+                //    this.animations.play('shoot');
+                //else {
+                //    this.animations.play('shootjump');
+                //}
             }
             else {
                 if (!this.isJumping)

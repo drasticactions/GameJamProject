@@ -19,7 +19,7 @@ var GameJam;
             this.checkWorldBounds = true;
             this.body.collideWorldBounds = true;
             this.cursors = this.game.input.keyboard.createCursorKeys();
-            this.anchor.setTo(0.5, 0);
+            this.anchor.setTo(0.5, 0.5);
             this.isJumping = false;
             this.bullets = game.add.group();
             this.bullets.enableBody = true;
@@ -28,60 +28,18 @@ var GameJam;
             this.bullets.setAll('checkWorldBounds', true);
             this.bullets.setAll('outOfBoundsKill', true);
             this.animations.add('idle', [
-                'player/idle/0001.png',
-                'player/idle/0002.png',
-                'player/idle/0003.png'
+                'witch/player/idle/0001.png'
             ], 10, true);
-            this.animations.add('dash', [
-                'player/dash/0001.png',
-                'player/dash/0002.png',
-                'player/dash/0003.png'
-            ], 10, true, false);
             this.animations.add('jump', [
-                'player/jump/0001.png',
-                'player/jump/0002.png',
-                'player/jump/0003.png',
-                'player/jump/0004.png',
-                'player/jump/0005.png',
-                'player/jump/0006.png',
-                'player/jump/0007.png'
+                'witch/player/jump/W_Jump1.png',
+                'witch/player/jump/W_Jump2.png'
             ], 10, false, false);
             this.animations.add('walk', [
-                'player/walk/0003.png',
-                'player/walk/0004.png',
-                'player/walk/0005.png',
-                'player/walk/0006.png',
-                'player/walk/0007.png',
-                'player/walk/0008.png',
-                'player/walk/0009.png',
-                'player/walk/0010.png',
-                'player/walk/0011.png',
-                'player/walk/0012.png'
-            ], 10, true, false);
-            this.animations.add('shoot', [
-                'player/shoot/0001.png',
-                'player/shoot/0002.png'
-            ], 10, true, false);
-            this.animations.add('shootjump', [
-                'player/shootjump/0001.png',
-                'player/shootjump/0002.png',
-                'player/shootjump/0003.png',
-                'player/shootjump/0004.png',
-                'player/shootjump/0005.png',
-                'player/shootjump/0006.png',
-                'player/shootjump/0007.png'
-            ], 10, false, false);
-            this.animations.add('shootrun', [
-                'player/shootrun/0001.png',
-                'player/shootrun/0002.png',
-                'player/shootrun/0003.png',
-                'player/shootrun/0004.png',
-                'player/shootrun/0005.png',
-                'player/shootrun/0006.png',
-                'player/shootrun/0007.png',
-                'player/shootrun/0008.png',
-                'player/shootrun/0009.png',
-                'player/shootrun/0010.png'
+                'witch/player/walk/0001.png',
+                'witch/player/walk/0002.png',
+                'witch/player/walk/0003.png',
+                'witch/player/walk/0004.png',
+                'witch/player/walk/0005.png'
             ], 10, true, false);
             this.animations.play('idle');
             game.add.existing(this);
@@ -96,7 +54,8 @@ var GameJam;
                 bullet.checkWorldBounds = true;
                 bullet.outOfBoundsKill = true;
                 bullet.reset(this.x, this.y);
-                bullet.rotation = this.rotation;
+                var rotationSpeed = this.facingRight ? -250 : 250;
+                bullet.rotation = this.isJumping ? rotationSpeed : this.rotation;
                 var bulletSpeed = this.facingRight ? 700 : -700;
                 bullet.body.velocity.x = Math.cos(bullet.rotation) * bulletSpeed;
                 bullet.body.velocity.y = Math.sin(bullet.rotation) * bulletSpeed;
@@ -116,10 +75,6 @@ var GameJam;
             if (this.cursors.left.isDown && this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
                 this.facingRight = false;
                 this.body.velocity.x = -150;
-                if (!this.isJumping)
-                    this.animations.play('shootrun');
-                else
-                    this.animations.play('shootjump');
                 if (this.scale.x === 1) {
                     this.scale.x = -1;
                 }
@@ -136,10 +91,6 @@ var GameJam;
             else if (this.cursors.right.isDown && this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
                 this.body.velocity.x = 150;
                 this.facingRight = true;
-                if (!this.isJumping)
-                    this.animations.play('shootrun');
-                else
-                    this.animations.play('shootjump');
                 if (this.scale.x === -1) {
                     this.scale.x = 1;
                 }
@@ -154,11 +105,6 @@ var GameJam;
                 }
             }
             else if (this.game.input.keyboard.isDown(Phaser.Keyboard.A)) {
-                if (!this.isJumping)
-                    this.animations.play('shoot');
-                else {
-                    this.animations.play('shootjump');
-                }
             }
             else {
                 if (!this.isJumping)
